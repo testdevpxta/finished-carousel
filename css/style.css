@@ -1,0 +1,326 @@
+:root {
+    --accent: #1b5254;
+    --accent_rgb: 196, 95, 45;
+    --sub-accent: #2b3991;
+    --sub-accent_rgb: 43, 57, 145;
+    --color-1: #086fc9;
+}
+
+html {
+    font-size: 62.5%
+}
+
+body {
+    color: #535353;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    background-color: var(--accent);
+}
+
+/* img {
+    max-width: 100%;
+    vertical-align: top
+} */
+
+a {
+    text-decoration: none;
+    border: none;
+    outline: none
+}
+
+a:focus,
+a:hover,
+a:active {
+    outline: 0;
+}
+
+.outer {
+    margin: 0 auto
+}
+
+.content {
+    background-color: var(--accent);
+}
+
+.content .logo {
+    width: 100%
+}
+
+/* .content .logo img {
+    width: 30%;
+    max-height: 50vh;
+    margin-bottom: 20px;
+} */
+
+.logo_img {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.content .details a {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.content .details a:hover,
+.content .details a:active {
+    background-color: var(--accent);
+    color: #fff
+}
+
+.content .details a i {
+    position: absolute;
+    left: 14px;
+    color: var(--accent);
+    margin-top: 3px;
+}
+
+.topbar {
+    height: 15vh;
+    background-color: #f7f7f7;
+    color: var(--sub-accent);
+    line-height: 1.2em;
+    font-weight: bold;
+    font-size: 4.9vw;
+    display: table;
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px double var(--sub-accent);
+}
+
+.topbar_cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 8px 16px;
+}
+
+.header {
+    width: 100%;
+    height: calc(70vh - 18vh);
+    display: table;
+    border-top: 3px solid var(--sub-accent);
+}
+
+.heading_div {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--sub-accent);
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.subhead {
+    font-size: 14px;
+}
+
+.main {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.menu_container {
+    height: 30vh;
+    display: table;
+    width: 100%;
+}
+
+.menu_cell {
+    display: table-cell;
+    vertical-align: bottom;
+    padding-bottom: 16px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.menu_outer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 4px 4px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.menu_outer .menu {
+    padding: 11px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 5px;
+    color: var(--sub-accent);
+}
+
+.menu_outer a.menu .menu_icon {
+    margin-bottom: 16px;
+}
+
+.menu_outer a.menu .menu_icon i {
+    font-size: 24px;
+}
+
+.menu_outer a.menu .menu_text {
+    margin-top: 6px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.menu_outer a:active,
+.menu_outer a:focus {
+    outline: 0;
+    background-color: var(--sub-accent);
+    color: white;
+}
+
+.menu_outer a .menu_icon:active,
+.menu_outer a .menu_icon:focus {
+    outline: 0;
+    background-color: transparent;
+    transform: scale(1.2);
+}
+
+/* Image slide/Carousel */
+
+::-webkit-scrollbar {
+    display: block;
+}
+
+.css {
+    display: none;
+    width: 100%;
+    top: 0;
+    animation: fadeIn 1s;
+}
+
+.css img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.css1 {
+    display: flex;
+    width: 800px;
+    height: 444px;
+    position: relative;
+    overflow: auto;
+}
+
+.css2 {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.cssBtns {
+    padding: 5px 20px;
+    margin-top: 13px;
+    background-color: rgba(255, 255, 255, 0.55);
+    border: none;
+    color: var(--sub-accent);
+    border-radius: 20px;
+}
+
+.active {
+    display: flex;
+}
+
+#renderImage {
+    display: none;
+}
+
+#loaderr {
+    width: 800px;
+    height: 444px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loaderr h2 {
+    color: white;
+}
+
+.loaderrs {
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid #0000;
+    border-right-color: #0078bf;
+    position: relative;
+    animation: l24 1s infinite linear;
+}
+
+.loaderrs:before,
+.loaderrs:after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: inherit;
+    animation: inherit;
+    animation-duration: 2s;
+}
+
+.loaderrs:after {
+    animation-duration: 4s;
+}
+
+.carouselbtns {
+    display: none;
+}
+
+@keyframes l24 {
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .css1 {
+        width: 100%;
+        height: 230px;
+        border-radius: 5px;
+    }
+
+    #loaderr {
+        width: 100%;
+        height: 230px;
+    }
+}
+
+@media (min-width:641px) {
+    .heading {
+        font-size: 24px;
+    }
+
+    .topbar {
+        font-size: 20px;
+    }
+}
