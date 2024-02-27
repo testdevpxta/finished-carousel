@@ -82,9 +82,11 @@ loop()
 let imageStatus = "NotZoomed";
 const imageZoom = () => {
     let images = document.querySelectorAll(".cssImg");
+    let imageOutter = document.querySelector(".css1");
     let zoomBtn = document.getElementById("zoomBtn")
 
     if (imageStatus === "NotZoomed") {
+        imageOutter.style.height = "320px"
         images.forEach((e) => {
             e.style.width = "250%";
             clearInterval(interval)
@@ -92,6 +94,7 @@ const imageZoom = () => {
         })
         imageStatus = "Zoomed";
     } else if (imageStatus === "Zoomed") {
+        imageOutter.style.height = "220px"
         images.forEach((e) => {
             e.style.width = "100%";
             interval = setInterval(imageSwitch, 5000);
