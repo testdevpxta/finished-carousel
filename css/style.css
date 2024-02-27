@@ -233,6 +233,10 @@ a:active {
     border-radius: 20px;
 }
 
+.cssBtns path {
+    fill: var(--sub-accent);
+}
+
 .active {
     display: flex;
 }
@@ -280,6 +284,8 @@ a:active {
 
 .carouselbtns {
     display: none;
+    justify-content: center;
+    gap: 10px;
 }
 
 @keyframes l24 {
