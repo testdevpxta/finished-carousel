@@ -304,8 +304,8 @@ a:active {
     }
 
     .css1 {
-        width: 336px;
-        height: 189px;
+        width: 100%;
+        height: 220px;
         border-radius: 5px;
     }
 
