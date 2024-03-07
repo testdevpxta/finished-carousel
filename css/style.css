@@ -288,6 +288,11 @@ a:active {
     gap: 10px;
 }
 
+.zoomedImg {
+    height: 100vh;
+    width: 250%;
+}
+
 @keyframes l24 {
     100% {
         transform: rotate(1turn)
