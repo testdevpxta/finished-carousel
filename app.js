@@ -59,20 +59,20 @@ function imageSwitch(a) {
     }
 }
 
-let interval = setInterval(imageSwitch, 8000);
-let loopValue = 1;
-function loop() {
-    if (loopValue === 1) {
-        console.log(loopValue);
-        clearInterval(interval);
-        loopValue = 0;
-    }
-    else if (loopValue === 0) {
-        console.log(loopValue);
-        interval = setInterval(imageSwitch, 8000);
-        loopValue = 1;
-    }
-}
+// let interval = setInterval(imageSwitch, 8000);
+// let loopValue = 1;
+// function loop() {
+//     if (loopValue === 1) {
+//         console.log(loopValue);
+//         clearInterval(interval);
+//         loopValue = 0;
+//     }
+//     else if (loopValue === 0) {
+//         console.log(loopValue);
+//         interval = setInterval(imageSwitch, 8000);
+//         loopValue = 1;
+//     }
+// }
 
 let imageStatus = "NotZoomed";
 const imageZoom = () => {
