@@ -59,7 +59,7 @@ function imageSwitch(a) {
     }
 }
 
-// let interval = setInterval(imageSwitch, 8000);
+let interval = setInterval(imageSwitch, 8000);
 // let loopValue = 1;
 // function loop() {
 //     if (loopValue === 1) {
