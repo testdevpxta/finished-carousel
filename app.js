@@ -3,7 +3,7 @@
 // parentElement.firstElementChild.style.display = "block"
 
 function loadedImages() {
-    fetch('https://script.google.com/macros/s/AKfycbx6RKT5D7d85qP8kdCSGQ9FLSrQSYGiSXmVB0swAG8A3bn_VwHB-DahBXuGNn1wezztHA/exec')
+    fetch('https://script.google.com/macros/s/AKfycby8xrUcuFUSH48sTIwu48J0AK-DZ1iDttZPIg76W8ZcKdxaz5a6mlkRJrAr807OxpI4IQ/exec')
         .then(function (response) {
             return response.json();
         })
@@ -21,15 +21,10 @@ function loadedImages() {
             });
             document.getElementById("loaderr").style.display = "none";
             document.getElementById("renderImage").innerHTML = layout;
+            document.getElementById("renderImage2").innerHTML = layout;
             document.getElementById("renderImage").style.display = "block";
             document.querySelector(".carouselbtns").style.display = "block"
             imgIdCount <= 1 ? document.getElementById("nextBtn").style.display = "none" : document.getElementById("nextBtn").style.display = "flex";
-            // if (imgIdCount === 1) {
-            //     document.querySelector(".carouselbtns").style.display = "none"
-            // }
-            // else {
-            //     document.querySelector(".carouselbtns").style.display = "flex"
-            // }
         })
         .catch(error => {
             document.querySelector(".css2").style.display = "none";
@@ -42,9 +37,9 @@ loadedImages()
 let imageVal = 0;
 function imageSwitch(a) {
     if (imageVal > -1 || a.value == "next") {
-        let imgNum = document.querySelectorAll(".css").length;
-        let currentImage = document.querySelectorAll(".css")[imageVal];
-        let nextImage = document.querySelectorAll(".css")[imageVal + 1];
+        let imgNum = document.querySelectorAll(".css2 .css").length;
+        let currentImage = document.querySelectorAll(".css2  .css")[imageVal];
+        let nextImage = document.querySelectorAll(".css2  .css")[imageVal + 1];
 
         if (imageVal < imgNum - 1) {
             currentImage.style.display = "none";
@@ -53,26 +48,70 @@ function imageSwitch(a) {
         }
         else {
             imageVal = 0;
-            document.querySelectorAll(".css")[imgNum - 1].style.display = "none";
-            document.querySelectorAll(".css")[0].style.display = "flex";
+            document.querySelectorAll(".css2  .css")[imgNum - 1].style.display = "none";
+            document.querySelectorAll(".css2  .css")[0].style.display = "flex";
         }
     }
 }
 
+let imageVal2 = 0;
+function imageSwitchAlbum(a) {
+    if (a.value == "next") {
+        let imgNum = document.querySelectorAll(".css3 .css").length;
+        let currentImage = document.querySelectorAll(".css3 .css")[imageVal2];
+        let nextImage = document.querySelectorAll(".css3 .css")[imageVal2 + 1];
+
+        if (imageVal2 < imgNum - 1) {
+            currentImage.style.display = "none";
+            nextImage.style.display = "flex";
+            imageVal2 += 1;
+        }
+        else {
+            imageVal2 = 0;
+            document.querySelectorAll(".css3 .css")[imgNum - 1].style.display = "none";
+            document.querySelectorAll(".css3 .css")[0].style.display = "flex";
+        }
+    }
+    else if (a.value == "prev") {
+        let currentImage = document.querySelectorAll(".css3  .css")[imageVal2];
+        let prevImage = document.querySelectorAll(".css3  .css")[imageVal2 - 1];
+
+        if (imageVal2 > 0) {
+            currentImage.style.display = "none";
+            prevImage.style.display = "flex";
+            imageVal2 -= 1;
+        }
+    }
+}
+
+function openZoomView(a) {
+    let view = document.querySelector(".css3");
+    let img = document.querySelectorAll(".css3 .cssImg")
+    let full_btn = document.querySelector(".css3_fullview")
+
+    if (a.value == "open") {
+        view.style.display = "flex"
+    }
+    else if (a.value == "close") {
+        view.style.display = "none"
+    }
+    else if (a.value == "small") {
+        img.forEach((item) => {
+            item.style.width = "350%";
+            full_btn.innerHTML = "Small Screen View"
+            a.value = "full";
+        })
+    }
+    else if (a.value == "full") {
+        img.forEach((item) => {
+            item.style.width = "100%";
+            full_btn.innerHTML = "Full Screen View"
+            a.value = "small";
+        })
+    }
+}
+
 let interval = setInterval(imageSwitch, 8000);
-// let loopValue = 1;
-// function loop() {
-//     if (loopValue === 1) {
-//         console.log(loopValue);
-//         clearInterval(interval);
-//         loopValue = 0;
-//     }
-//     else if (loopValue === 0) {
-//         console.log(loopValue);
-//         interval = setInterval(imageSwitch, 8000);
-//         loopValue = 1;
-//     }
-// }
 
 let imageStatus = "NotZoomed";
 const imageZoom = () => {
