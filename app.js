@@ -96,7 +96,7 @@ function openZoomView(a) {
 
     }
     else if (a.value == "close") {
-        view.style.display = "none"
+        view.style.display = "none";
     scale.setAttribute("content", 'width=device-width, initial-scale=1.0, maximum-scale= 1.0, user-scalable=no');
 
     }
