@@ -87,13 +87,18 @@ function imageSwitchAlbum(a) {
 function openZoomView(a) {
     let view = document.querySelector(".css3");
     let img = document.querySelectorAll(".css3 .cssImg")
-    let full_btn = document.querySelector(".css3_fullview")
+    let scale = document.querySelector('meta[name="viewport"]')
+    let full_btn = document.querySelector(".css3_fullview");
 
     if (a.value == "open") {
-        view.style.display = "flex"
+        view.style.display = "flex";
+    scale.setAttribute("content", 'width=device-width, initial-scale=1.0');
+
     }
     else if (a.value == "close") {
         view.style.display = "none"
+    scale.setAttribute("content", 'width=device-width, initial-scale=1.0, maximum-scale= 1.0, user-scalable=no');
+
     }
     else if (a.value == "small") {
         img.forEach((item) => {
@@ -145,12 +150,12 @@ const imageZoom = () => {
 
 }
 
-const changeScale = () => {
-    let scale = document.querySelector('meta[name="viewport"]')
-    let disable = "width=device-width, initial-scale=1.0"
+// const changeScale = () => {
+//     let scale = document.querySelector('meta[name="viewport"]')
+//     let disable = "width=device-width, initial-scale=1.0"
 
-    scale.setAttribute("content", disable)
-}
+//     scale.setAttribute("content", disable)
+// }
 
 // const changeScale = () => {
 //     let scale = document.getElementsByTagName('meta')["viewport"].content
