@@ -146,7 +146,7 @@ const imageZoom = () => {
 }
 
 const changeScale = () => {
-    let scale = document.getElementsByTagName('meta')["keywords"].content
+    let scale = document.getElementsByTagName('meta')["viewport"].content
     // let disable = "width=device-width, initial-scale=1.0"
         
    scale = "width=device-width, initial-scale=1.0"
