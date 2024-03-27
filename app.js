@@ -146,8 +146,15 @@ const imageZoom = () => {
 }
 
 const changeScale = () => {
-    let scale = document.getElementsByTagName('meta')["viewport"].content
-    // let disable = "width=device-width, initial-scale=1.0"
-        
-   scale = "width=device-width, initial-scale=1.0"
+    let scale = document.querySelector('meta[name="viewport"]')
+    let disable = "width=device-width, initial-scale=1.0"
+
+    scale.setAttribute("content", disable)
 }
+
+// const changeScale = () => {
+//     let scale = document.getElementsByTagName('meta')["viewport"].content
+//     // let disable = "width=device-width, initial-scale=1.0"
+        
+//    scale = "width=device-width, initial-scale=1.0"
+// }
