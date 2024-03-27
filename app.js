@@ -109,6 +109,7 @@ function openZoomView(a) {
             a.value = "small";
         })
     }
+    changeScale()
 }
 
 let interval = setInterval(imageSwitch, 8000);
@@ -142,4 +143,11 @@ const imageZoom = () => {
         imageStatus = "NotZoomed";
     }
 
+}
+
+const changeScale = () => {
+    let scale = document.querySelector('meta[name="viewport]')
+    let disable = "width=device-width, initial-scale=1.0"
+
+    scale.setAttribute("content", disable)
 }
