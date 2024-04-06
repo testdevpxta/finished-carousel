@@ -183,10 +183,10 @@ function enableImgZoom() {
     });
 
     // Reset image scale when pinch ends
-    mc.on('pinchend', function () {
-        imageContainer.style.transform = 'scale(1)';
-        interval = setInterval(imageSwitch, 5000);
-    });
+    // mc.on('pinchend', function () {
+    //     imageContainer.style.transform = 'scale(1)';
+    //     interval = setInterval(imageSwitch, 5000);
+    // });
 }
 
  enableImgZoom()
