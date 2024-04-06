@@ -165,6 +165,7 @@ const imageZoom = () => {
 // }
 
 function enableImgZoom() {
+    let scale = document.querySelector('meta[name="viewport"]')
     var imageContainer =  document.getElementById("renderImage");
 
     // Initialize Hammer.js on the image container
@@ -179,14 +180,16 @@ function enableImgZoom() {
         // var scale = Math.max(1, Math.min(ev.scale, 4));
         var scale = ev.scale;
         imageContainer.style.transform = 'scale(' + scale + ')';
+        scale.setAttribute("content", 'width=device-width, initial-scale=1.0');
         clearInterval(interval)
     });
 
     // Reset image scale when pinch ends
-    // mc.on('pinchend', function () {
-    //     imageContainer.style.transform = 'scale(1)';
-    //     interval = setInterval(imageSwitch, 5000);
-    // });
+    mc.on('pinchend', function () {
+        imageContainer.style.transform = 'scale(1)';
+        scale.setAttribute("content", 'width=device-width, initial-scale=1.0, maximum-scale= 1.0, user-scalable=no');
+        interval = setInterval(imageSwitch, 5000);
+    });
 }
 
  enableImgZoom()
