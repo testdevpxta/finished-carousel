@@ -165,7 +165,7 @@ const imageZoom = () => {
 // }
 
 function enableImgZoom() {
-    var imageContainer = document.getElementById('zmCssImg');
+    var imageContainer =  document.getElementById("renderImage");
 
     // Initialize Hammer.js on the image container
     var mc = new Hammer.Manager(imageContainer);
