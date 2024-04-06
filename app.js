@@ -15,7 +15,7 @@ function loadedImages() {
                 let imageID = item.img_id;
                 layout += `
                 <div class="css ${index === 0 ? 'active' : ''}">
-                    <img class="cssImg" src="https://lh3.googleusercontent.com/d/${imageID}"
+                    <img class="cssImg" id="zmCssImg" src="https://lh3.googleusercontent.com/d/${imageID}"
                         alt="">
                 </div>`;
             });
@@ -165,7 +165,7 @@ const imageZoom = () => {
 // }
 
 function enableImgZoom() {
-    var imageContainer = document.querySelector('.cssImg');
+    var imageContainer = document.getElementById('zmCssImg');
 
     // Initialize Hammer.js on the image container
     var mc = new Hammer.Manager(imageContainer);
