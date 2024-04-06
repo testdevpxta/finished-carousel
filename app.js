@@ -186,3 +186,5 @@ function enableImgZoom() {
         imageContainer.style.transform = 'scale(1)';
     });
 }
+
+ enableImgZoom()
