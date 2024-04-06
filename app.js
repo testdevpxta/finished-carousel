@@ -185,11 +185,11 @@ function enableImgZoom() {
     });
 
     // Reset image scale when pinch ends
-    // mc.on('pinchend', function () {
-    //     imageContainer.style.transform = 'scale(1)';
-    //     scalee.setAttribute("content", 'width=device-width, initial-scale=1.0, maximum-scale= 1.0, user-scalable=no');
-    //     interval = setInterval(imageSwitch, 5000);
-    // });
+    mc.on('pinchend', function () {
+        imageContainer.style.transform = 'scale(1)';
+        scalee.setAttribute("content", 'width=device-width, initial-scale=1.0, maximum-scale= 1.0, user-scalable=no');
+        interval = setInterval(imageSwitch, 5000);
+    });
 }
 
  enableImgZoom()
