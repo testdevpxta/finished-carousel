@@ -179,11 +179,13 @@ function enableImgZoom() {
         // var scale = Math.max(1, Math.min(ev.scale, 4));
         var scale = ev.scale;
         imageContainer.style.transform = 'scale(' + scale + ')';
+        clearInterval(interval)
     });
 
     // Reset image scale when pinch ends
     mc.on('pinchend', function () {
         imageContainer.style.transform = 'scale(1)';
+        interval = setInterval(imageSwitch, 5000);
     });
 }
 
