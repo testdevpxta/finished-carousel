@@ -14,7 +14,7 @@ function loadedImages() {
             data.data.forEach(function (item, index) {
                 let imageID = item.img_id;
                 layout += `
-                <div class="css ${index === 0 ? 'active' : ''}" id="test">
+                <div class="css ${index === 0 ? 'active' : ''}">
                     <img class="cssImg" src="https://lh3.googleusercontent.com/d/${imageID}"
                         alt="">
                 </div>`;
@@ -164,14 +164,25 @@ const imageZoom = () => {
 //    scale = "width=device-width, initial-scale=1.0"
 // }
 
-$(function () {
-    $("#test").swipe({
-        //Generic swipe handler for all directions
-        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-            $(this).text("You swiped " + direction);
-        }
+function enableImgZoom() {
+    var imageContainer = document.querySelector('.cssImg');
+
+    // Initialize Hammer.js on the image container
+    var mc = new Hammer.Manager(imageContainer);
+
+    // Enable pinch to zoom
+    mc.add(new Hammer.Pinch());
+
+    // Add event listener for pinch events
+    mc.on('pinch', function (ev) {
+        // Scale the image based on pinch gesture
+        // var scale = Math.max(1, Math.min(ev.scale, 4));
+        var scale = ev.scale;
+        imageContainer.style.transform = 'scale(' + scale + ')';
     });
 
-    //Set some options later
-    $("#test").swipe({ fingers: 2 });
-});
+    // Reset image scale when pinch ends
+    mc.on('pinchend', function () {
+        imageContainer.style.transform = 'scale(1)';
+    });
+}
