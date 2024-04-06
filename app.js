@@ -14,7 +14,7 @@ function loadedImages() {
             data.data.forEach(function (item, index) {
                 let imageID = item.img_id;
                 layout += `
-                <div class="css ${index === 0 ? 'active' : ''}">
+                <div class="css ${index === 0 ? 'active' : ''}" id="test">
                     <img class="cssImg" src="https://lh3.googleusercontent.com/d/${imageID}"
                         alt="">
                 </div>`;
@@ -92,12 +92,12 @@ function openZoomView(a) {
 
     if (a.value == "open") {
         view.style.display = "flex";
-    scale.setAttribute("content", 'width=device-width, initial-scale=1.0');
+        // scale.setAttribute("content", 'width=device-width, initial-scale=1.0');
 
     }
     else if (a.value == "close") {
         view.style.display = "none";
-    scale.setAttribute("content", 'width=device-width, initial-scale=1.0, maximum-scale= 1.0, user-scalable=no');
+        // scale.setAttribute("content", 'width=device-width, initial-scale=1.0, maximum-scale= 1.0, user-scalable=no');
 
     }
     else if (a.value == "small") {
@@ -160,6 +160,18 @@ const imageZoom = () => {
 // const changeScale = () => {
 //     let scale = document.getElementsByTagName('meta')["viewport"].content
 //     // let disable = "width=device-width, initial-scale=1.0"
-        
+
 //    scale = "width=device-width, initial-scale=1.0"
 // }
+
+$(function () {
+    $("#test").swipe({
+        //Generic swipe handler for all directions
+        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+            $(this).text("You swiped " + direction);
+        }
+    });
+
+    //Set some options later
+    $("#test").swipe({ fingers: 2 });
+});

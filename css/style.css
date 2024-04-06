@@ -333,7 +333,7 @@ a:active {
     display: flex;
     align-items: center;
     gap: 20px;
-    position: sticky;
+    position: fixed;
     top: 15px;
     right: 15px;
 }
