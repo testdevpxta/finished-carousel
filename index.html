@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale= 1.0, user-scalable=no">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,20 +17,19 @@
         <div class="content">
             <div>
                 <div class="topbar">
-                    <img class="logo_img" src="img/logo.png" />
-                    <div class="topbar_cell">શેઠ ધનજીશા રૂસ્તમજી ઉમરીગર મેમોરિયલ સ્કૂલ <br> ગુજરાતી માધ્યમ <br> પ્રાથમિક
-                        વિભાગ</div>
+                    <div class="logo_css">
+                        <img src="img/logo.png" />
+                    </div>
+                    <div class="topbar_cell noto-serif-gujarati-fonts">શેઠ ધનજીશા રૂસ્તમજી ઉમરીગર મેમોરિયલ સ્કૂલ ગુજરાતી માધ્યમ પ્રાથમિક વિભાગ</div>
                 </div>
                 <div class="header">
                     <div class="heading_div">
                         <div class="logo">
                             <div>
                                 <div class="css2">
-                                    <img src="https://drive.google.com/file/d/1bi28b5CUlyruhCQasA3zSTB8dbxkG0_g/view?pli=1"
-                                        alt="" srcset="">
+                                    <img src="https://drive.google.com/file/d/1bi28b5CUlyruhCQasA3zSTB8dbxkG0_g/view?pli=1" alt="" srcset="">
                                     <div id="renderImage" class="css1" onclick="openZoomedDialog()">
                                         <div class="css">
-
                                         </div>
                                     </div>
                                     <div id="loaderr">
@@ -36,23 +37,16 @@
                                     </div>
                                 </div>
                                 <div class="css3">
-                                    <span class="material-symbols-light--close css3_btns"
-                                        onclick="openZoomedDialog()"></span>
+                                    <span class="material-symbols-light--close css3_btns" onclick="openZoomedDialog()"></span>
                                     <div class="css4">
                                         <div id="renderImage2" class="css1">
                                         </div>
                                         <div class="css4_btns">
-                                            <button class="css4_btn_l" onclick="prevImage()" value="prev"><svg
-                                                    width="25px" height="25px" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 320 512">
-                                                    <path fill="white"
-                                                        d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
+                                            <button class="css4_btn_l" onclick="prevImage()" value="prev"><svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                    <path fill="white" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z" />
                                                 </svg></button>
-                                            <button class="css4_btn_r" onclick="nextImage()" value="next"><svg
-                                                    width="25px" height="25px" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 320 512">
-                                                    <path fill="white"
-                                                        d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                                            <button class="css4_btn_r" onclick="nextImage()" value="next"><svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                    <path fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
                                                 </svg></button>
                                         </div>
                                     </div>
@@ -65,23 +59,23 @@
                     <div class="menu_cell">
                         <div class="menu_outer">
                             <a class="menu" href="http://psgm.sdrumschool.com/?page_id=12">
-                                <div class="menu_icon"><i class="fa fa-university"></i></div>
+                                <div class="menu_icon"><span class="ri--school-line"></span></div>
                                 <div class="menu_text">About Us</div>
                             </a>
                             <a class="menu" href="http://psgm.sdrumschool.com/?page_id=37">
-                                <div class="menu_icon"><i class="fa fa-info"></i></div>
+                                <div class="menu_icon"><span class="uil--info"></span></div>
                                 <div class="menu_text">Admission</div>
                             </a>
                             <a class="menu" href="http://psgm.sdrumschool.com/?page_id=1281">
-                                <div class="menu_icon"><i class="fa fa-file-alt"></i></div>
+                                <div class="menu_icon"><span class="bx--file"></span></div>
                                 <div class="menu_text">Fee Structure</div>
                             </a>
                             <a class="menu" href="http://psgm.sdrumschool.com/?cat=14">
-                                <div class="menu_icon"><i class="fa fa-images"></i></div>
+                                <div class="menu_icon"><span class="solar--gallery-outline"></span></div>
                                 <div class="menu_text">Gallery</div>
                             </a>
                             <a class="menu" href="http://psgm.sdrumschool.com/?page_id=61">
-                                <div class="menu_icon"><i class="fa fa-newspaper"></i></div>
+                                <div class="menu_icon"><span class="iconamoon--news-light"></span></div>
                                 <div class="menu_text">News &amp; Events</div>
                             </a>
                             <!-- <a class="menu" href="http://unnatienglishacademy.com/?cat=7">
@@ -89,7 +83,7 @@
                                 <div class="menu_text">Events</div>
                             </a> -->
                             <a class="menu" href="http://psgm.sdrumschool.com/">
-                                <div class="menu_icon"><i class="fa fa-mouse-pointer"></i></div>
+                                <div class="menu_icon"><span class="fluent--globe-person-20-regular"></span></div>
                                 <div class="menu_text">Website</div>
                             </a>
                         </div>
@@ -98,8 +92,7 @@
             </div>
         </div>
     </div>
-
-    <script src="./app.js"></script>
+    <script src="./appV3.js"></script>
 </body>
 
 </html>
